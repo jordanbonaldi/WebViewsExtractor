@@ -50,7 +50,7 @@ var launchPromise = (index) => new Promise((res) => {
 
 var recursivePromiseCall = (array, index) => {
     if (array.length <= index)
-        return Promise.resolve("Done");
+        return Promise.resolve();
 
     return Promise.resolve(launchPromise(index)).then(() => recursivePromiseCall(array, index + 1));
 };

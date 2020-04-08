@@ -71,7 +71,7 @@ var getPassport = () => {
                     data: []
                 })
             }
-        })
+        });
     } catch (e) {
         data.push({
             title: "Passport",
@@ -120,7 +120,7 @@ var functionName = [{
 
 var launchPromise = (index) => new Promise((res) => {
     segments[index].getElementsByClassName("segment-info")[0].click();
-    setTimeout(res, 2000);
+    return setTimeout(res, 2000);
 }).then(() => {
     try {
         let name = segments[index].getElementsByTagName("article")[0].attributes["data-announce-text"].value;
