@@ -65,7 +65,7 @@ public class Script {
 
     private void parseUrl() {
         String lat = this.getParsedParameter("latency");
-        this.latency = lat.equals("") ? 0 : Integer.parseInt(lat.trim()); // Not Compulsory
+        this.latency = "".equals(lat) ? 0 : Integer.parseInt(lat.trim()); // Not Compulsory
         this.url = this.getParsedParameter("url"); // Compulsory
     }
 

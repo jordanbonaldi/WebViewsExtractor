@@ -143,13 +143,15 @@ Example of a full injection file:
 	 }]
 	));
 ```
+Be careful to not use 'let' in your javascript file, it can create errors in some web browser versions.
+
 ### Create an asynchronous injection file
 
 The creation procedure is exactly the same, because we call our callback once
 ```
 Injector.promiseReceive(...);
 ```
-is called. Here's an example of an asynchronours injection file:
+is called. Here's an example of an asynchronous injection file:
 ```
 	//url:https://twitter.com/settings/profile  
 	

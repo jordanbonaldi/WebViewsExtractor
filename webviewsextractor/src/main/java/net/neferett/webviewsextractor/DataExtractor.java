@@ -92,11 +92,13 @@ public class DataExtractor extends Extractor {
             return;
 
         this.loginService.getWebInjector().urlInjector(script.getUrl(), script.getContent(), s -> {
-            JSONArray jsonArray = null;
+            JSONArray jsonArray;
 
             try {
                 jsonArray = new JSONArray(s);
-            } catch (JSONException ignored) { }
+            } catch (JSONException ignored) {
+                jsonArray = null;
+            }
 
             extractionCallback.receiveData(
                     jsonArray,

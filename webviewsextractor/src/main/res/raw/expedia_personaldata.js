@@ -9,7 +9,7 @@
 var segments = [];
 var data = [];
 
-Array.from(document.querySelectorAll(".segmented-list.results-list.remove-margin")).forEach((e) => Array.from(e.getElementsByClassName("segment")).forEach(s => segments.push(s)));
+Array.from(document.querySelectorAll(".segmented-list.results-list.remove-margin")).forEach((e) => Array.from(e.getElementsByClassName("segment")).forEach((s) => segments.push(s)));
 
 var getCb = () => {
     try {
@@ -120,7 +120,7 @@ var launchPromise = (index) => new Promise((res) => {
     } catch(e) {}
 
     return new Promise((res) => setTimeout(res, 2000));
-}).catch((e) => console.log(e));
+}).catch();
 
 var recursivePromiseCall = (array, index) => {
     if (array.length <= index)
