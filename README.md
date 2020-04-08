@@ -3,6 +3,7 @@
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.neferett/webviewsextractor/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/net.neferett/webviewsextractor)
 [![GitHub release](https://img.shields.io/github/release/jordanbonaldi/WebViewsExtractor.svg)](https://GitHub.com/jordanbonaldi/WebViewsExtractor/releases/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/630fedd6604245eba2b41552e5180fa9)](https://www.codacy.com/manual/jordanbonaldi/WebViewsExtractor?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jordanbonaldi/WebViewsExtractor&amp;utm_campaign=Badge_Grade)
 
 Private Data Extraction using WebViewsInjection for autologin on the below services, and injection of javascript files containing asynchronous or synchronous extractions.
 

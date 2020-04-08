@@ -69,7 +69,7 @@ var getPassport = () => {
                     type: "passport",
                     value: `${document.getElementById("passport_country_" + id).innerText} ${document.getElementById("passport_number_" + id).innerText}`,
                     data: []
-                })
+                });
             }
         });
     } catch (e) {
