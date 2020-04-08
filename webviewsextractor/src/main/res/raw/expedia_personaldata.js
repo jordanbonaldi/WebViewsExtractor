@@ -32,7 +32,8 @@ var getCb = () => {
             type: 'cb',
             value: 'Visa',
             data: [document.getElementById('credit_cardNumber_0').innerText, document.getElementById('creditCard_edit_div_0_desc').value,
-                document.getElementById('creditCard_edit_div_0_expanded_expiration_month').options[indexMonth].innerText + "/" + document.getElementById('creditCard_edit_div_0_expanded_expiration_year').options[indexyear].innerText],
+                `${document.getElementById('creditCard_edit_div_0_expanded_expiration_month').options[indexMonth].innerText} / ${document.getElementById('creditCard_edit_div_0_expanded_expiration_year').options[indexyear].innerText}`
+            ],
         })
     }
 }
@@ -40,7 +41,7 @@ var getCb = () => {
 var getPhoneNumber = () => {
     var index = document.getElementById('primaryCountryCode').options.selectedIndex;
 
-    return "+" + document.getElementById('primaryCountryCode').options[index].attributes['data-country-name'].value + " " + document.getElementById('phone_number').value
+    return `+ ${document.getElementById('primaryCountryCode').options[index].attributes['data-country-name'].value} ${document.getElementById('phone_number').value}`
 };
 
 var getAddress = () => {
@@ -53,7 +54,7 @@ var getAddress = () => {
         type: 'address',
         value: 'Home Adress',
         data: [
-            document.getElementById('country').options[index].innerText + ', ' + getValue('addressline1') + ', ' + getValue('addressline2') + ', ' + getValue('zip1') + ', ' + getValue('city1')
+            `${document.getElementById('country').options[index].innerText}, ${getValue('addressline1')}, ${getValue('addressline2')}, ${getValue('zip1')}, ${getValue('city1')}`
         ]
     })
 };
@@ -66,7 +67,7 @@ var getPassport = () => {
                 data.push({
                     title: 'Passport',
                     type: 'passport',
-                    value: document.getElementById('passport_country_' + id).innerText + ' ' + document.getElementById('passport_number_' + id).innerText,
+                    value: `${document.getElementById('passport_country_' + id).innerText} ${document.getElementById('passport_number_' + id).innerText}`,
                     data: []
                 })
             }
@@ -75,7 +76,7 @@ var getPassport = () => {
         data.push({
             title: 'Passport',
             type: 'passport',
-            value: document.getElementById('passport_country_0').innerText + ' ' + document.getElementById('passport_number_0').innerText,
+            value: `${document.getElementById('passport_country_0').innerText} ${document.getElementById('passport_number_0').innerText}`,
             data: []
         })
     }
@@ -90,8 +91,7 @@ var getPersonalInfo = () => {
     }, {
         title: 'Name',
         type: 'profile',
-        value: document.getElementById('first_name').value + " " +
-            (document.getElementById('middle_name_label').value == null ? '' : document.getElementById('middle_name_label').value + " ") + document.getElementById('last_name').value,
+        value: `${document.getElementById('first_name').value} ${(document.getElementById('middle_name_label').value == null ? '' : `${document.getElementById('middle_name_label').value} `)} + ${document.getElementById('last_name').value}`,
         data: []
     }, {
         title: 'BirthDate',
@@ -108,13 +108,13 @@ var getPersonalInfo = () => {
 };
 
 var launch_promise = (index) => new Promise((res, err) => {
-    segments[index].getElementsByClassName('segment-info')[0].click()
+    segments[index].getElementsByClassName('segment-info')[0].click();
     setTimeout(res, 2000);
 }).then(() => {
     try {
         let name = segments[index].getElementsByTagName('article')[0].attributes['data-announce-text'].value;
-        let found = functionName.filter(e => e.name == name)[0];
-        console.log(found)
+        let found = functionName.filter(e => e.name === name)[0];
+
         if (found != null)
             found.function();
     } catch(e) {}
@@ -125,7 +125,7 @@ var recusive_promise_call = (array, index) => {
     if (array.length <= index)
         return;
 
-    return Promise.resolve(launch_promise(index)).then(e => recusive_promise_call(array, index + 1));
+    return Promise.resolve(launch_promise(index)).then(() => recusive_promise_call(array, index + 1));
 };
 
 

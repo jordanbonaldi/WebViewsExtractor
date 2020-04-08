@@ -6,7 +6,6 @@
 package net.neferett.webviewsextractor;
 
 import android.content.Context;
-import android.util.Log;
 import net.neferett.webviewsextractor.extraction.ExtractionCallback;
 import net.neferett.webviewsextractor.extraction.ExtractionStatus;
 import net.neferett.webviewsextractor.extraction.Extractor;

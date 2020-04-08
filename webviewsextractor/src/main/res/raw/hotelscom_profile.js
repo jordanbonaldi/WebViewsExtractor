@@ -10,19 +10,19 @@ Injector.promiseReceive(JSON.stringify([
     {
         title: 'Fullname',
         type: 'profile',
-        value: document.querySelectorAll(".item-option-content > p")[0].innerText,
+        value: document.querySelectorAll('.item-option-content > p')[0].innerText,
         data: []
     },
     {
         title: 'Phone number',
         type: 'profile',
-        value: document.querySelectorAll(".item-option-content > p")[2].innerText,
+        value: document.querySelectorAll('.item-option-content > p')[2].innerText,
         data: []
     },
     {
         title: 'Email address',
         type: 'profile',
-        value: document.querySelectorAll(".item-option-content > p")[3].innerText,
+        value: document.querySelectorAll('.item-option-content > p')[3].innerText,
         data: []
     }
 ]));
