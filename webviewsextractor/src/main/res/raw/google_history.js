@@ -26,17 +26,20 @@ new Promise((res, err) => setTimeout(res, 2000)).then(() => {
 
         var title = e.querySelector(".title").innerText;
 
+        var dates;
         try {
-            var dates = Array.from(e.querySelector(".subtitle")
+            dates = Array.from(e.querySelector(".subtitle")
                 .children[1].getElementsByTagName("span"))
                 .map((e) => e.innerText);
 
             if (dates.length === 0)
                 dates = Array.from(e.querySelector(".subtitle").getElementsByTagName("span")).map((e) => e.innerText).join(" ");
-        } catch (exception) {}
+        } catch (exception) {
+            dates = null;
+        }
 
 
-        if (Array.isArray(dates))
+        if (dates !== null && Array.isArray(dates))
             dates = dates.filter((e) => e.match("-?\\d+(\\.\\d+)?"));
         tab.push({
            title: type,

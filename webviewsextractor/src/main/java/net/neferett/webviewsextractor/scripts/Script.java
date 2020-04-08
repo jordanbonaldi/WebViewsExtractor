@@ -42,7 +42,7 @@ public class Script {
         int i = stream.read(buffer);
 
         if (i <= 0)
-            throw new Exception("Unreadable file");
+            throw new Exception();
 
         stream.close();
 
