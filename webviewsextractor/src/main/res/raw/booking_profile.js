@@ -8,7 +8,7 @@
 
 var datas = [];
 
-Array.from(document.getElementsByClassName("settings-item")).forEach(e => {
+Array.from(document.getElementsByClassName("settings-item")).forEach((e) => {
     try {
         var object = {};
         var type = e.getElementsByClassName("settings-item__label")[0].innerText;
@@ -16,17 +16,14 @@ Array.from(document.getElementsByClassName("settings-item")).forEach(e => {
 
         var data = "";
 
-        if (control != null && control[0].tagName === "SELECT") {
-            Array.from(control).forEach(a => {
-                if (a.tagName === "SELECT" && a.options[a.selectedIndex].text != null &&
-                    !a.options[a.selectedIndex].value.includes("default")) {
-                    data += `${a.options[a.selectedIndex].text}`
-                }
-
+        if (control !== null && control[0].tagName === "SELECT") {
+            Array.from(control).forEach((a) => {
+                if (a.tagName === "SELECT" && a.options[a.selectedIndex].text !== null && !a.options[a.selectedIndex].value.includes("default"))
+                    data += `${a.options[a.selectedIndex].text}`;
             });
         }
         else if (control[0].tagName === "BUTTON" &&
-            e.getElementsByClassName("settings-address__data")[0] != null) {
+            e.getElementsByClassName("settings-address__data")[0] !== null) {
             object.type = "address";
             data = e.getElementsByClassName("settings-address__data")[0].innerText.replace(/[\n\r]/g, "");
         } else
@@ -42,4 +39,4 @@ Array.from(document.getElementsByClassName("settings-item")).forEach(e => {
     } catch (e) {}
 });
 
-Injector.promiseReceive(JSON.stringify(datas))
+Injector.promiseReceive(JSON.stringify(datas));

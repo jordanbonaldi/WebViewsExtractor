@@ -153,7 +153,7 @@ is called. Here's an example of an asynchronours injection file:
 ```
 	//url:https://twitter.com/settings/profile  
 	
-	new Promise(res => {  
+	new Promise((res) => {  
 	  setTimeout(res, 5000)  
 	}).then(() => {  
 	  Injector.promiseReceive(JSON.stringify([  

@@ -10,7 +10,7 @@ var tab = [];
 var current;
 
 var parseData = () => {
-    Array.from(document.querySelectorAll(".ml-place-list-list-item")).forEach(e => {
+    Array.from(document.querySelectorAll(".ml-place-list-list-item")).forEach((e) => {
         var title, type, other = "";
         try {
             title = e.getElementsByClassName("ml-entity-list-item-title")[0].innerText.trim();
@@ -27,7 +27,7 @@ var parseData = () => {
     });
 };
 
-var launch_promise = (index) => new Promise((res, err) => {
+var launchPromise = (index) => new Promise((res) => {
     var button = document.querySelectorAll("button.ml-common-list-item")[index];
     current = button.getElementsByClassName("ml-common-list-item-title ml-ellipsis")[0].innerText;
 
@@ -38,31 +38,30 @@ var launch_promise = (index) => new Promise((res, err) => {
 }).then(() => {
     parseData();
     document.querySelector(".ml-place-list-details-header > button").click();
-    return new Promise((res, err) => setTimeout(res, 2000))
+
+    return new Promise((res) => setTimeout(res, 2000));
 });
 
-var recusive_promise_call = (array, index) => {
+var recursivePromiseCall = (array, index) => {
     if (array.length <= index)
         return Promise.resolve(new Promise(() => Injector.promiseReceive(JSON.stringify(tab)))
             .catch(() => Injector.promiseReceive("null")));
 
-    return Promise.resolve(launch_promise(index)).then(() => recusive_promise_call(array, index + 1))
+    return Promise.resolve(launchPromise(index)).then(() => recursivePromiseCall(array, index + 1))
         .catch(() => Injector.promiseReceive("null"));
 };
 
 var create_inject = (inject) =>
-    new Promise((res, err) => {
+    new Promise((res) => {
         inject();
         setTimeout(res, 2000);
     });
 
-new Promise((res, err) => {
+new Promise((res) => {
    setTimeout(res, 2000);
 }).then(() => {
     create_inject(() => document.querySelector("button > .ml-icon-hamburger").click())
         .then(() => create_inject(() => document.querySelector("button .ml-icon-personal-places").click()))
-        .then(() => {
-            var array = Array.from(document.querySelectorAll("button.ml-common-list-item"));
-            return recusive_promise_call(array, 0)
-        }).catch(() => Injector.promiseReceive("null"));
+        .then(() => recursivePromiseCall(Array.from(document.querySelectorAll("button.ml-common-list-item")), 0))
+        .catch(() => Injector.promiseReceive("null"));
 });

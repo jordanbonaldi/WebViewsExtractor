@@ -9,7 +9,7 @@
 var segments = [];
 var data = [];
 
-Array.from(document.querySelectorAll(".segmented-list.results-list.remove-margin")).forEach(e => Array.from(e.getElementsByClassName("segment")).forEach(s => segments.push(s)));
+Array.from(document.querySelectorAll(".segmented-list.results-list.remove-margin")).forEach((e) => Array.from(e.getElementsByClassName("segment")).forEach(s => segments.push(s)));
 
 var getCb = () => {
     try {
@@ -36,18 +36,18 @@ var getCb = () => {
             ],
         })
     }
-}
+};
 
 var getPhoneNumber = () => {
     var index = document.getElementById("primaryCountryCode").options.selectedIndex;
 
-    return `+ ${document.getElementById("primaryCountryCode").options[index].attributes["data-country-name"].value} ${document.getElementById("phone_number").value}`
+    return `+ ${document.getElementById("primaryCountryCode").options[index].attributes["data-country-name"].value} ${document.getElementById("phone_number").value}`;
 };
 
 var getAddress = () => {
     var index = document.getElementById("country").options.selectedIndex;
 
-    var getValue = (e) => document.getElementById(e).value == null ? "" : document.getElementById(e).value;
+    var getValue = (e) => document.getElementById(e).value === null ? "" : document.getElementById(e).value;
 
     data.push({
         title: "Address",
@@ -80,7 +80,7 @@ var getPassport = () => {
             data: []
         })
     }
-}
+};
 
 var getPersonalInfo = () => {
     data.push({
@@ -91,7 +91,7 @@ var getPersonalInfo = () => {
     }, {
         title: "Name",
         type: "profile",
-        value: `${document.getElementById("first_name").value} ${(document.getElementById("middle_name_label").value == null ? "" : `${document.getElementById("middle_name_label").value} `)} + ${document.getElementById("last_name").value}`,
+        value: `${document.getElementById("first_name").value} ${(document.getElementById("middle_name_label").value === null ? "" : `${document.getElementById("middle_name_label").value} `)} + ${document.getElementById("last_name").value}`,
         data: []
     }, {
         title: "BirthDate",
@@ -107,25 +107,26 @@ var getPersonalInfo = () => {
     getAddress();
 };
 
-var launch_promise = (index) => new Promise((res, err) => {
+var launchPromise = (index) => new Promise((res) => {
     segments[index].getElementsByClassName("segment-info")[0].click();
     setTimeout(res, 2000);
 }).then(() => {
     try {
         let name = segments[index].getElementsByTagName("article")[0].attributes["data-announce-text"].value;
-        let found = functionName.filter(e => e.name === name)[0];
+        let found = functionName.filter((e) => e.name === name)[0];
 
-        if (found != null)
+        if (found !== null)
             found.function();
     } catch(e) {}
-    return new Promise(res => setTimeout(res, 2000))
-}).catch(e=> console.log(e));
 
-var recusive_promise_call = (array, index) => {
+    return new Promise((res) => setTimeout(res, 2000));
+}).catch((e) => console.log(e));
+
+var recursivePromiseCall = (array, index) => {
     if (array.length <= index)
-        return;
+        return Promise.resolve("Done");
 
-    return Promise.resolve(launch_promise(index)).then(() => recusive_promise_call(array, index + 1));
+    return Promise.resolve(launchPromise(index)).then(() => recursivePromiseCall(array, index + 1));
 };
 
 
@@ -138,6 +139,6 @@ var functionName = [{
 }, {
     name: "Payment Methods",
     function: getCb
-}]
+}];
 
-recusive_promise_call(segments, 0).then(() => Injector.promiseReceive(JSON.stringify(data)));
+recursivePromiseCall(segments, 0).then(() => Injector.promiseReceive(JSON.stringify(data)));

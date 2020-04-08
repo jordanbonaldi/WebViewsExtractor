@@ -15,7 +15,7 @@ Array.from(document.getElementsByClassName("_3cu5")).forEach((device) => {
         value: _device[1].trim(),
         data: [
             _device[2].trim(),
-            _device[3] != null ? _device[3].trim() : _device[3]
+            _device[3] !== null ? _device[3].trim() : _device[3]
         ]
     });
 });

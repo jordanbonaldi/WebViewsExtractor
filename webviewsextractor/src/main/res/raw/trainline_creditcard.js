@@ -8,7 +8,7 @@
 //latency:5
 var data = [];
 
-Array.from(document.querySelectorAll("div[data-test=payment-card")).forEach(cb => {
+Array.from(document.querySelectorAll("div[data-test=payment-card")).forEach((cb) => {
     data.push({
         title: "Credit Card",
         type: "cb",

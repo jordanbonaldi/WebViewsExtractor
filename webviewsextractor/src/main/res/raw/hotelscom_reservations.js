@@ -26,8 +26,8 @@ const getData = (document) => {
         ]
     });
 };
-new Promise((res, err) => {
-    Array.from(document.getElementsByClassName("card-wrapper")).forEach(e => {
+new Promise((res) => {
+    Array.from(document.getElementsByClassName("card-wrapper")).forEach((e) => {
         var link = e.getElementsByClassName("hotel-link")[0];
         var ifrm = document.createElement("iframe");
         ifrm.setAttribute("src", link);
@@ -37,9 +37,10 @@ new Promise((res, err) => {
         document.body.appendChild(ifrm);
         i++;
     });
-    setTimeout(res, 5000 * i)
+
+    setTimeout(res, 5000 * i);
 }).then(() => {
-    Array.from(document.getElementsByClassName("card-wrapper")).forEach(e => {
+    Array.from(document.getElementsByClassName("card-wrapper")).forEach(() => {
         i--;
         getData(document.querySelector(`iframe[code=${i}]`).contentWindow.document);
     });

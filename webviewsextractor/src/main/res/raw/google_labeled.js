@@ -8,7 +8,7 @@
 
 var a = [];
 var max = 2;
-Array.from(document.getElementById("i4").children).forEach(e => {
+Array.from(document.getElementById("i4").children).forEach((e) => {
     if(max <= 0)
         return;
 

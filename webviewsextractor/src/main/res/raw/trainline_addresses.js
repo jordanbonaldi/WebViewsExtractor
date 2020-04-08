@@ -8,7 +8,7 @@
 //latency:5
 var data = [];
 
-Array.from(document.getElementsByClassName("_zjunba")).forEach(addr => {
+Array.from(document.getElementsByClassName("_zjunba")).forEach((addr) => {
     data.push({
         title: "Addresses book",
         type: "address",
