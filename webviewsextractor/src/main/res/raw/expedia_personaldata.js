@@ -78,7 +78,7 @@ var getPassport = () => {
             type: "passport",
             value: `${document.getElementById("passport_country_0").innerText} ${document.getElementById("passport_number_0").innerText}`,
             data: []
-        })
+        });
     }
 };
 
@@ -107,6 +107,17 @@ var getPersonalInfo = () => {
     getAddress();
 };
 
+var functionName = [{
+    name: "Personal Info",
+    function: getPersonalInfo
+}, {
+    name: "Passports",
+    function: getPassport
+}, {
+    name: "Payment Methods",
+    function: getCb
+}];
+
 var launchPromise = (index) => new Promise((res) => {
     segments[index].getElementsByClassName("segment-info")[0].click();
     setTimeout(res, 2000);
@@ -128,17 +139,5 @@ var recursivePromiseCall = (array, index) => {
 
     return Promise.resolve(launchPromise(index)).then(() => recursivePromiseCall(array, index + 1));
 };
-
-
-var functionName = [{
-    name: "Personal Info",
-    function: getPersonalInfo
-}, {
-    name: "Passports",
-    function: getPassport
-}, {
-    name: "Payment Methods",
-    function: getCb
-}];
 
 recursivePromiseCall(segments, 0).then(() => Injector.promiseReceive(JSON.stringify(data)));
