@@ -8,14 +8,14 @@
 //latency:5
 var data = [];
 
-Array.from(document.getElementsByClassName('_zjunba')).forEach(addr => {
+Array.from(document.getElementsByClassName("_zjunba")).forEach(addr => {
     data.push({
-        title: 'Addresses book',
-        type: 'address',
-        value: addr.getElementsByClassName('_1d6eubdNaN')[0].innerText,
+        title: "Addresses book",
+        type: "address",
+        value: addr.getElementsByClassName("_1d6eubdNaN")[0].innerText,
         data: [
-            addr.getElementsByClassName('_4lzv1t')[1].innerText,
-            addr.getElementsByClassName('_4lzv1t')[2].innerText]
+            addr.getElementsByClassName("_4lzv1t")[1].innerText,
+            addr.getElementsByClassName("_4lzv1t")[2].innerText]
     });
 });
 

@@ -8,15 +8,15 @@
 
 var a = [];
 var max = 2;
-Array.from(document.getElementById('i4').children).forEach(e => {
+Array.from(document.getElementById("i4").children).forEach(e => {
     if(max <= 0)
         return;
 
     a.push({
-        title: 'Labeled address',
-        type: 'address',
-        value: e.querySelector('.WtmMlb span').innerText.trim().replace(':', ''),
-        data: [e.querySelector('.WtmMlb .HXbYec').innerText.trim()]
+        title: "Labeled address",
+        type: "address",
+        value: e.querySelector(".WtmMlb span").innerText.trim().replace(":", ""),
+        data: [e.querySelector(".WtmMlb .HXbYec").innerText.trim()]
     });
 
     max--;

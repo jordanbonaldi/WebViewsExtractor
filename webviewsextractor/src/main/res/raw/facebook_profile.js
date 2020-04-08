@@ -7,15 +7,15 @@
 //url:https://m.facebook.com/settings/account/
 Injector.promiseReceive(JSON.stringify([
     {
-        title: 'Complete Name',
-        type: 'profile',
-        value: document.getElementsByClassName('fcg')[0].innerText,
+        title: "Complete Name",
+        type: "profile",
+        value: document.getElementsByClassName("fcg")[0].innerText,
         data: []
     },
     {
-        title: 'Email address',
-        type: 'profile',
-        value: document.getElementsByClassName('fcg')[1].innerText,
+        title: "Email address",
+        type: "profile",
+        value: document.getElementsByClassName("fcg")[1].innerText,
         data: []
     }
 ]));

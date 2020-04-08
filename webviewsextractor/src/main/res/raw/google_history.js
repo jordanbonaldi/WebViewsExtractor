@@ -7,16 +7,16 @@
 // url:https://www.google.com/maps/timeline?pb
 
 new Promise((res, err) => setTimeout(res, 2000)).then(() => {
-    document.querySelector('.nugget-title').click();
+    document.querySelector(".nugget-title").click();
 }).then(() => {
     var tab = [];
-    var types = ['Most Visited', 'Visited', 'Unconfirmed'];
+    var types = ["Most Visited", "Visited", "Unconfirmed"];
     var b = 0;
 
-    Array.from(document.getElementsByClassName('visited-place-card')).forEach(e => {
-        var style = e.querySelector('.image');
+    Array.from(document.getElementsByClassName("visited-place-card")).forEach(e => {
+        var style = e.querySelector(".image");
 
-        if (style != null && e.querySelector('.image').style.cssText === '')
+        if (style != null && e.querySelector(".image").style.cssText === "")
             return;
 
         if (style == null)
@@ -24,23 +24,23 @@ new Promise((res, err) => setTimeout(res, 2000)).then(() => {
 
         var type = types[b];
 
-        var title = e.querySelector('.title').innerText;
+        var title = e.querySelector(".title").innerText;
 
         try {
-            var dates = Array.from(e.querySelector('.subtitle')
-                .children[1].getElementsByTagName('span'))
+            var dates = Array.from(e.querySelector(".subtitle")
+                .children[1].getElementsByTagName("span"))
                 .map(e => e.innerText);
 
             if (dates.length === 0)
-                dates = Array.from(e.querySelector('.subtitle').getElementsByTagName('span')).map(e => e.innerText).join(' ');
+                dates = Array.from(e.querySelector(".subtitle").getElementsByTagName("span")).map(e => e.innerText).join(" ");
         } catch (exception) {}
 
 
         if (Array.isArray(dates))
-            dates = dates.filter(e => e.match('-?\\d+(\\.\\d+)?'));
+            dates = dates.filter(e => e.match("-?\\d+(\\.\\d+)?"));
         tab.push({
            title: type,
-           type: 'address',
+           type: "address",
            value: title,
            data: dates == null ? [] : Array.isArray(dates) ? dates : [dates.trim()]
         });

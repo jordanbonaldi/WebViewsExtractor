@@ -8,15 +8,15 @@
 //latency:5
 var data = [];
 
-Array.from(document.querySelectorAll('div[data-test=payment-card')).forEach(cb => {
+Array.from(document.querySelectorAll("div[data-test=payment-card")).forEach(cb => {
     data.push({
-        title: 'Credit Card',
-        type: 'cb',
-        value: cb.getElementsByClassName('_1fys87g')[0].innerText,
+        title: "Credit Card",
+        type: "cb",
+        value: cb.getElementsByClassName("_1fys87g")[0].innerText,
         data: [
-            cb.getElementsByClassName('_2q0mvb')[0].innerText,
-            cb.getElementsByClassName('_1jm7y6h')[0].innerText,
-            cb.getElementsByClassName('_1jm7y6h')[1].innerText
+            cb.getElementsByClassName("_2q0mvb")[0].innerText,
+            cb.getElementsByClassName("_1jm7y6h")[0].innerText,
+            cb.getElementsByClassName("_1jm7y6h")[1].innerText
         ],
     });
 });

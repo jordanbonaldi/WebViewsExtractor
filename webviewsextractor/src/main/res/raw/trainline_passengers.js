@@ -8,12 +8,12 @@
 //latency:5
 var data = [];
 
-Array.from(document.getElementsByClassName('_uptyki')).forEach(passenger => {
+Array.from(document.getElementsByClassName("_uptyki")).forEach(passenger => {
     data.push({
-        title: 'Saved Passenger',
-        type: 'profile',
-        value: passenger.getElementsByClassName('_16lb9ur')[0].innerText,
-        data: [passenger.getElementsByClassName('_ivbdc4')[0].innerText]
+        title: "Saved Passenger",
+        type: "profile",
+        value: passenger.getElementsByClassName("_16lb9ur")[0].innerText,
+        data: [passenger.getElementsByClassName("_ivbdc4")[0].innerText]
     });
 });
 

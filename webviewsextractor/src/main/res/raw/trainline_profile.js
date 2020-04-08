@@ -8,21 +8,21 @@
 //latency:5
 Injector.promiseReceive(JSON.stringify([
     {
-        title: 'First Name',
-        type: 'profile',
-        value: document.getElementById('firstName').value,
+        title: "First Name",
+        type: "profile",
+        value: document.getElementById("firstName").value,
         data: []
     },
     {
-        title: 'Last name',
-        type: 'profile',
-        value: document.getElementById('lastName').value,
+        title: "Last name",
+        type: "profile",
+        value: document.getElementById("lastName").value,
         data: []
     },
     {
-        title: 'Email address',
-        type: 'profile',
-        value: document.getElementById('email').value,
+        title: "Email address",
+        type: "profile",
+        value: document.getElementById("email").value,
         data: []
     }
 ]));

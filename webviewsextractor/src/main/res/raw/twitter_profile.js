@@ -10,27 +10,27 @@ new Promise(res => {
 }).then(() => {
     Injector.promiseReceive(JSON.stringify([
         {
-            title: 'Nickname',
-            type: 'profile',
-            value: document.querySelector('input[name=name]').value,
+            title: "Nickname",
+            type: "profile",
+            value: document.querySelector("input[name=name]").value,
             data: []
         },
         {
-            title: 'Bio',
-            type: 'profile',
-            value: document.querySelector('textarea[name=description]').value,
+            title: "Bio",
+            type: "profile",
+            value: document.querySelector("textarea[name=description]").value,
             data: []
         },
         {
-            title: 'URL',
-            type: 'profile',
-            value: document.querySelector('input[name=url]').value,
+            title: "URL",
+            type: "profile",
+            value: document.querySelector("input[name=url]").value,
             data: []
         },
         {
-            title: 'Date of Birth',
-            type: 'profile',
-            value: document.querySelector('.css-1dbjc4n.r-779j7e.r-23eiwj').querySelector('div[dir=auto].r-jwli3a').innerText,
+            title: "Date of Birth",
+            type: "profile",
+            value: document.querySelector(".css-1dbjc4n.r-779j7e.r-23eiwj").querySelector("div[dir=auto].r-jwli3a").innerText,
             data: []
         }
     ]));

@@ -8,33 +8,33 @@
 
 var datas = [];
 
-Array.from(document.getElementsByClassName('settings-item')).forEach(e => {
+Array.from(document.getElementsByClassName("settings-item")).forEach(e => {
     try {
         var object = {};
-        var type = e.getElementsByClassName('settings-item__label')[0].innerText;
-        var control = e.querySelectorAll('.settings-control');
+        var type = e.getElementsByClassName("settings-item__label")[0].innerText;
+        var control = e.querySelectorAll(".settings-control");
 
-        var data = '';
+        var data = "";
 
-        if (control != null && control[0].tagName === 'SELECT') {
+        if (control != null && control[0].tagName === "SELECT") {
             Array.from(control).forEach(a => {
-                if (a.tagName === 'SELECT' && a.options[a.selectedIndex].text != null &&
-                    !a.options[a.selectedIndex].value.includes('default')) {
-                    data += ' ' + a.options[a.selectedIndex].text
+                if (a.tagName === "SELECT" && a.options[a.selectedIndex].text != null &&
+                    !a.options[a.selectedIndex].value.includes("default")) {
+                    data += `${a.options[a.selectedIndex].text}`
                 }
 
             });
         }
-        else if (control[0].tagName === 'BUTTON' &&
-            e.getElementsByClassName('settings-address__data')[0] != null) {
-            object.type = 'address';
-            data = e.getElementsByClassName('settings-address__data')[0].innerText.replace(/[\n\r]/g, ', ');
+        else if (control[0].tagName === "BUTTON" &&
+            e.getElementsByClassName("settings-address__data")[0] != null) {
+            object.type = "address";
+            data = e.getElementsByClassName("settings-address__data")[0].innerText.replace(/[\n\r]/g, "");
         } else
             data += control[0].value;
 
-        if (data !== '') {
-            object.title = 'Personal Data';
-            object.type = object.type === 'address' ? object.type : 'profile';
+        if (data !== "") {
+            object.title = "Personal Data";
+            object.type = object.type === "address" ? object.type : "profile";
             object.value = type;
             object.data = [data.trim()];
             datas.push(object);

@@ -8,16 +8,16 @@
 
 var datas = [];
 
-Array.from(document.getElementsByClassName('settings-table__body')[0].getElementsByClassName('settings-table__row')).forEach(e => {
+Array.from(document.getElementsByClassName("settings-table__body")[0].getElementsByClassName("settings-table__row")).forEach(e => {
     try {
-        var cbtype = e.getElementsByClassName('settings-icon')[0].getAttribute('data-title');
-        var cbnb = e.getElementsByClassName('settings-text--ltr')[0].innerText;
-        var cbname = e.getElementsByClassName('settings-table__card-name')[0].innerText;
-        var cbdate = e.getElementsByClassName('settings-text--ltr')[1].innerText;
+        var cbtype = e.getElementsByClassName("settings-icon")[0].getAttribute("data-title");
+        var cbnb = e.getElementsByClassName("settings-text--ltr")[0].innerText;
+        var cbname = e.getElementsByClassName("settings-table__card-name")[0].innerText;
+        var cbdate = e.getElementsByClassName("settings-text--ltr")[1].innerText;
         datas.push({
-            title: 'Credit Card',
-            type: 'cb',
-            value: cbtype == null ? 'Visa' : cbtype,
+            title: "Credit Card",
+            type: "cb",
+            value: cbtype == null ? "Visa" : cbtype,
             data: [cbnb, cbname, cbdate],
         });
     } catch (e) {}
