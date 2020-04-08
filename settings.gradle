@@ -1,0 +1,2 @@
+include ':webviewsextractor'
+rootProject.name='WebViewsExtractor'
