@@ -6,7 +6,7 @@
 
 // url:https://www.google.com/maps/timeline?pb
 
-new Promise((res, err) => setTimeout(res, 2000)).then(() => {
+new Promise((res) => setTimeout(res, 2000)).then(() => {
     document.querySelector(".nugget-title").click();
 }).then(() => {
     var tab = [];

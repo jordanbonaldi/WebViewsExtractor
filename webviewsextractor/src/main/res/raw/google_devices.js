@@ -40,7 +40,7 @@ var parseData = (index) => {
     });
 };
 
-var launchPromise = (index) => new Promise((res, err) => {
+var launchPromise = (index) => new Promise((res) => {
     document.querySelectorAll("div[role=listitem]")[index]
         .querySelector("a[role=button]").click();
     setTimeout(() => parseData(index).then(() => setTimeout(res, 2000))
@@ -52,7 +52,7 @@ var recursivePromiseCall = (array, index) => {
     if (array.length <= index)
         return Promise.resolve("Done");
 
-    return Promise.resolve(launchPromise(index)).then((e) => recursivePromiseCall(array, index + 1));
+    return Promise.resolve(launchPromise(index)).then(() => recursivePromiseCall(array, index + 1));
 };
 
 var array = Array.from(document.querySelectorAll("div[role=listitem]"));
