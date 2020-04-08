@@ -51,7 +51,7 @@ var recursivePromiseCall = (array, index) => {
         .catch(() => Injector.promiseReceive("null"));
 };
 
-var create_inject = (inject) =>
+var createInject = (inject) =>
     new Promise((res) => {
         inject();
         setTimeout(res, 2000);
@@ -60,8 +60,8 @@ var create_inject = (inject) =>
 new Promise((res) => {
    setTimeout(res, 2000);
 }).then(() => {
-    create_inject(() => document.querySelector("button > .ml-icon-hamburger").click())
-        .then(() => create_inject(() => document.querySelector("button .ml-icon-personal-places").click()))
+    createInject(() => document.querySelector("button > .ml-icon-hamburger").click())
+        .then(() => createInject(() => document.querySelector("button .ml-icon-personal-places").click()))
         .then(() => recursivePromiseCall(Array.from(document.querySelectorAll("button.ml-common-list-item")), 0))
         .catch(() => Injector.promiseReceive("null"));
 });

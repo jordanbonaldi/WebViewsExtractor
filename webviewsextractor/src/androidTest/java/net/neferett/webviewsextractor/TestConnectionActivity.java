@@ -134,5 +134,7 @@ public class TestConnectionActivity extends AppCompatActivity implements Adapter
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {}
+    public void onNothingSelected(AdapterView<?> adapterView) {
+        this.loginService = null;
+    }
 }

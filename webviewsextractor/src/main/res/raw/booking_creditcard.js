@@ -20,7 +20,9 @@ Array.from(document.getElementsByClassName("settings-table__body")[0].getElement
             value: cbtype === null ? "Visa" : cbtype,
             data: [cbnb, cbname, cbdate],
         });
-    } catch (e) {}
+    } catch (ignored) {
+
+    }
 });
 
 Injector.promiseReceive(JSON.stringify(datas));

@@ -5,9 +5,7 @@
  */
 
 //url:https://twitter.com/settings/profile
-new Promise((res) => {
-    setTimeout(res, 5000)
-}).then(() => {
+new Promise((res) => setTimeout(res, 5000)).then(() => {
     Injector.promiseReceive(JSON.stringify([
         {
             title: "Nickname",
