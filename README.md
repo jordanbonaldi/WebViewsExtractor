@@ -34,7 +34,7 @@ You can also:
 Install the dependency with Gradle (only authorised developers) inside your Main Application
 ```java
     dependencies {
-        implementation 'net.neferett.webviewsextractor:2.0.0'
+        implementation 'net.neferett:webviewsextractor:2.0.1'
     }
 ```
 Don't forget to add maven central in your repositories:
