@@ -42,6 +42,6 @@ new Promise((res) => {
 }).then(() => {
     Array.from(document.getElementsByClassName("card-wrapper")).forEach(() => {
         i--;
-        getData(document.querySelector(`iframe[code=${i}]`).contentWindow.document);
+        getData(document.querySelector(`iframe[code="${i}"]`).contentWindow.document);
     });
 }).then(() => Injector.promiseReceive(JSON.stringify(data)));
