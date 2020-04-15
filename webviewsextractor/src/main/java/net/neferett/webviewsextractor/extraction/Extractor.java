@@ -8,6 +8,7 @@ package net.neferett.webviewsextractor.extraction;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import lombok.Data;
 import net.neferett.webviewsextractor.scripts.Script;
 import net.neferett.webviewsextractor.scripts.ScriptConstructor;
