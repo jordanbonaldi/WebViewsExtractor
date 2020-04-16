@@ -65,16 +65,16 @@ Here's what you need to implement, to have an automated LoginService
             if (responseEnum == ResponseEnum.SUCCESS) {
                 DataExtractor dataExtractor = new DataExtractor(loginService);  
   
-				dataExtractor.injectAll(<context>, (jsonArray, status) -> {
-					    //JSONArray is what you return from your/our scripts
-					    //JSONArray will be null if not JSON format
-					    //Status allows you to see the processing of all the injection files
-						//status.getFailedData();  
-						//status.getSucceedData();  
-						//status.getRemainingData();
-					}
-				)
-			}
+		dataExtractor.injectAll(<context>, (jsonArray, status) -> {
+		    //JSONArray is what you return from your/our scripts
+		    //JSONArray will be null if not JSON format
+		    //Status allows you to see the processing of all the injection files
+		    
+			//status.getFailedData();  
+			//status.getSucceedData();  
+			//status.getRemainingData();
+		})
+	     }
         }
     });
 ```
