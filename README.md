@@ -73,7 +73,7 @@ Here's what you need to implement, to have an automated LoginService
 			//status.getFailedData();  
 			//status.getSucceedData();  
 			//status.getRemainingData();
-		})
+		});
 	     }
         }
     });
