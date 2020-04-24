@@ -5,7 +5,7 @@
  */
 
 //url:https://uk.hotels.com/account/bookingslist.html
-
+//name: Booking history
 var i = 0;
 var data = [];
 

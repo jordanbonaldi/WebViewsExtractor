@@ -5,6 +5,7 @@
  */
 
 //url:https://uk.hotels.com/profile/settings.html
+// name: All your personal data
 
 Injector.promiseReceive(JSON.stringify([
     {

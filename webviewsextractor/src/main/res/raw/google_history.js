@@ -5,7 +5,7 @@
  */
 
 // url:https://www.google.com/maps/timeline?pb
-
+// name: Google Maps Location History
 new Promise((res) => setTimeout(res, 2000)).then(() => {
     document.querySelector(".nugget-title").click();
 }).then(() => {

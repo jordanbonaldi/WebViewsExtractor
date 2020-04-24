@@ -5,6 +5,7 @@
  */
 
 //url:https://www.expedia.co.uk/user/account
+// name: All your personal data
 
 var segments = [];
 var data = [];

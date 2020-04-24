@@ -5,6 +5,7 @@
  */
 
 //url:https://mobile.twitter.com/settings/applications
+// name: Connected Devices History
 
 new Promise((res) => setTimeout(res, 5000)).then(() => {
     let data = [];

@@ -5,6 +5,7 @@
  */
 
 // url:https://myaccount.google.com/device-activity
+// name: Connected Devices History
 
 var devices = [];
 var parseData = (index) => {

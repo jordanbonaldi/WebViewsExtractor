@@ -5,6 +5,8 @@
  */
 
 //url:https://m.facebook.com/settings/security_login/sessions/
+// name: Connected Devices History
+
 var data = [];
 
 Array.from(document.getElementsByClassName("_3cu5")).forEach((device) => {

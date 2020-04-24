@@ -5,6 +5,7 @@
  */
 
 // url:https://secure.booking.com/mysettings.en-gb.html
+// name: All your personal data
 
 var datas = [];
 

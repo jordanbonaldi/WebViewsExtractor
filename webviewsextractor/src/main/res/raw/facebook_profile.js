@@ -5,6 +5,8 @@
  */
 
 //url:https://m.facebook.com/settings/account/
+// name: All your personal data
+
 Injector.promiseReceive(JSON.stringify([
     {
         title: "Complete Name",

@@ -5,7 +5,7 @@
  */
 
 // url:https://myaccount.google.com/yourdata/maps
-
+// name: Tagged locations
 var a = [];
 var max = 2;
 Array.from(document.getElementById("i4").children).forEach((e) => {

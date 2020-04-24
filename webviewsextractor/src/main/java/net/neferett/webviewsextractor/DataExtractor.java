@@ -137,6 +137,19 @@ public class DataExtractor extends Extractor {
     }
 
     /**
+     * Getting Script Display Names
+     * @return List<String>
+     */
+    public List<String> getDisplayNameScripts() {
+        ArrayList<String> displayNames = new ArrayList<>();
+
+        for (Script script : this.getScripts())
+            displayNames.add(script.getName());
+
+        return displayNames;
+    }
+
+    /**
      * Getting Script List
      * @return List<Script>
      */

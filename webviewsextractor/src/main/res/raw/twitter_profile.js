@@ -5,6 +5,7 @@
  */
 
 //url:https://mobile.twitter.com/settings/profile
+// name: All your personal data
 
 new Promise((res) => setTimeout(res, 5000)).then(() => {
     Injector.promiseReceive(JSON.stringify([

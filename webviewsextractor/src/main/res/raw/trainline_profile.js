@@ -6,6 +6,8 @@
 
 //url:https://www.thetrainline.com/my-account/personal-details
 //latency:5
+// name: All your personal data
+
 Injector.promiseReceive(JSON.stringify([
     {
         title: "First Name",

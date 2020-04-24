@@ -24,6 +24,8 @@ public class Script {
     private String content;
     private int latency;
 
+    private String name;
+
     /*
         Automated file builder
 
@@ -67,6 +69,9 @@ public class Script {
         String lat = this.getParsedParameter("latency");
         this.latency = "".equals(lat) ? 0 : Integer.parseInt(lat.trim()); // Not Compulsory
         this.url = this.getParsedParameter("url"); // Compulsory
+
+        String name = this.getParsedParameter("name");
+        this.name = "".equals(name) ? this.fileName.split("_")[1] : this.getParsedParameter("name"); // Not Compulsory
     }
 
     public void evaluate() {
