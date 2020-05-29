@@ -17,14 +17,13 @@ Travelling Websites:
 - Booking.com
 - Expedia.com
 - Trainline
-- Agoda (Not Implemented Yet)
-- AirBNB (Not Implemented Yet)
+- Agoda
 
 Online Social Networks:
 - Twitter
 - Facebook
-- Instagram (Not Implemented Yet)
-- Pinterest (Not Implemented Yet)
+- Instagram
+- Pinterest
 
 You can also:
 - Using accordingly WebViewsInjector and your own new Services, create new injection scripts

@@ -9,13 +9,7 @@ package net.neferett.webviewsextractor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.AdapterView;
-import android.widget.Toast;
-import android.widget.Spinner;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import net.neferett.webviewsextractor.model.Model;
 import net.neferett.webviewsinjector.response.ResponseCallback;
@@ -64,10 +58,24 @@ public class TestConnectionActivity extends AppCompatActivity implements Adapter
         spinner.setOnItemSelectedListener(this);
     }
 
+    public void waitAndAction(int delay, Runnable runnable) {
+        TestConnectionActivity instance = this;
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        instance.runOnUiThread(runnable);
+                    }
+                },
+                delay * 1000
+        );
+    }
+
     private void extractDataOnService(LoginService loginService) {
         DataExtractor dataExtractor = new DataExtractor(loginService);
 
         dataExtractor.injectAll(TestConnectionActivity.this, (jsonArray, status) -> {
+            Log.d(LOG, String.valueOf(jsonArray));
             try {
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject obj = jsonArray.getJSONObject(i);
