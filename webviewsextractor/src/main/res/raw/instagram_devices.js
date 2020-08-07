@@ -21,9 +21,9 @@ Array.from(document.querySelectorAll('div')).forEach((div) => {
     if (activity.length !== 2) return;
 
     data.push({
-        title: activity[1].trim(),
+        title: 'devices history',
         type: 'device',
-        value: devicesTexts[0],
+        value: `${activity[1].trim()} ${devicesTexts[0]}`,
         data: [activity[0].trim()]
     })
 });

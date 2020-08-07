@@ -9,13 +9,13 @@
 
 Injector.promiseReceive(JSON.stringify([
     {
-        title: "Complete Name",
+        title: "fullname",
         type: "profile",
         value: document.getElementsByClassName("fcg")[0].innerText,
         data: []
     },
     {
-        title: "Email address",
+        title: "email",
         type: "profile",
         value: document.getElementsByClassName("fcg")[1].innerText,
         data: []

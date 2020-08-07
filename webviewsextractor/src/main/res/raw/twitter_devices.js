@@ -15,9 +15,9 @@ new Promise((res) => setTimeout(res, 5000)).then(() => {
         let texts = device.innerText.split('\n');
 
         data.push({
-            title: device.href.includes('application') ? `Connected Application` : `Device ${texts.shift()}`,
+            title: 'devices history',
             type: "device",
-            value: device.href.includes('application') ? texts[0] : texts.join(' '),
+            value:  device.href.includes('application') ? `Connected Application` : `Device ${texts.shift()} ${device.href.includes('application') ? texts[0] : texts.join(' ')}`,
             data: []
         })
     });

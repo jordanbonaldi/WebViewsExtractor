@@ -11,13 +11,13 @@ var profile = document.querySelectorAll('section.user-details-panel')[0].innerTe
 
 Injector.promiseReceive(JSON.stringify([
     {
-        title: "Complete Name",
+        title: "fullname",
         type: "profile",
         value: profile[2],
         data: []
     },
     {
-        title: "Email address",
+        title: "email",
         type: "profile",
         value: profile[4],
         data: []

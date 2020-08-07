@@ -9,7 +9,7 @@
 
 Injector.promiseReceive(JSON.stringify([
     {
-        title: "Fullname",
+        title: "fullname",
         type: "profile",
         value: document.querySelectorAll(".item-option-content > p")[0].innerText,
         data: []
@@ -21,7 +21,7 @@ Injector.promiseReceive(JSON.stringify([
         data: []
     },
     {
-        title: "Email address",
+        title: "email",
         type: "profile",
         value: document.querySelectorAll(".item-option-content > p")[3].innerText,
         data: []

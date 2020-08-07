@@ -6,7 +6,7 @@ group 'net.neferett'
 ext {
     PUBLISH_GROUP_ID = 'net.neferett'
     PUBLISH_ARTIFACT_ID = 'webviewsextractor'
-    PUBLISH_VERSION = '2.1.7'
+    PUBLISH_VERSION = '2.1.9-SNAPSHOT'
 }
 
 apply from: "${rootProject.projectDir}/publish-maven.gradle"

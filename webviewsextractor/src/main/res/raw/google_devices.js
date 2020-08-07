@@ -30,9 +30,9 @@ var parseData = (index) => {
         });
 
         devices.push({
-            title: `Device: ${document.getElementsByClassName("fUcIn")[index]}`,
+            title: `devices history`,
             type: "device",
-            value: document.getElementsByClassName("bCaYpf")[0].innerText.trim(),
+            value: `${document.getElementsByClassName("fUcIn")[index]} ${document.getElementsByClassName("bCaYpf")[0].innerText.trim()}`,
             data: [
                 ...ipData,
                 "now - " + document.getElementsByClassName("tHVeec")[0].children[0].innerText

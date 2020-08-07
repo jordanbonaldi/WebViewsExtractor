@@ -12,9 +12,9 @@ var data = [];
 Array.from(document.getElementsByClassName("_3cu5")).forEach((device) => {
     var _device = device.getElementsByClassName("_4n7b")[0].innerText.split("·").join("\n").trim().split("\n");
     data.push({
-        title: `Device: ${_device[0].trim()}`,
+        title: `devices history`,
         type: "device",
-        value: _device[1].trim(),
+        value: `${_device[0].trim()} ${_device[1].trim()}`,
         data: [
             _device[2].trim(),
             _device[3] != null ? _device[3].trim() : _device[3]

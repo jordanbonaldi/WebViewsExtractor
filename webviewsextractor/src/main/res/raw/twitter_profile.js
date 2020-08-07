@@ -10,7 +10,7 @@
 new Promise((res) => setTimeout(res, 5000)).then(() => {
     Injector.promiseReceive(JSON.stringify([
         {
-            title: "Nickname",
+            title: "displayname",
             type: "profile",
             value: document.querySelector("input[name=displayName]").value,
             data: []
