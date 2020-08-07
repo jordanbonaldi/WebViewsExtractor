@@ -30,7 +30,7 @@ You can also:
   
 ### Installation
 
-Install the dependency with Gradle (only authorised developers) inside your Main Application
+Install the dependency with Gradle inside your Main Application
 ```java
     dependencies {
         implementation 'net.neferett:webviewsextractor:2.1.7'
