@@ -184,6 +184,7 @@ PriVELT
 
 Android application to centralise known data from different services.
 The project is funded by PriVELT (https://privelt.ac.uk/).
+The project is based on scraping and is only for researches purposes.
 
 License
 ----
